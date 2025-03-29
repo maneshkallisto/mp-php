@@ -1,69 +1,49 @@
-# Welcome to your Lovable project
 
-## Project info
+# Mallu Pirate - PHP Torrent Website
 
-**URL**: https://lovable.dev/projects/d479bd82-4bd0-4d61-89c0-05fb3a8738ec
+This is a PHP implementation of a torrent search website. It provides a user interface for browsing and searching torrents across various categories.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- Browse torrents by category (Movies, TV Shows, Games, Music, Applications, etc.)
+- Search functionality
+- Torrent details pages with download links
+- Responsive design
 
-**Use Lovable**
+## File Structure
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d479bd82-4bd0-4d61-89c0-05fb3a8738ec) and start prompting.
+- `index.php` - Main entry point that handles page routing
+- `css/style.css` - Stylesheet for the entire website
+- `includes/` - Contains reusable page elements
+  - `header.php` - Website header with navigation
+  - `footer.php` - Website footer
+  - `torrents_table.php` - Reusable torrent listing table
+- `pages/` - Contains individual page templates
+  - `home.php` - Homepage with categories and popular torrents
+  - `browse.php` - Category browsing page
+  - `search.php` - Search results page
+  - `torrent.php` - Individual torrent details page
+  - `404.php` - Not found page
 
-Changes made via Lovable will be committed automatically to this repo.
+## Installation
 
-**Use your preferred IDE**
+1. Install a web server with PHP support (Apache, Nginx, etc.)
+2. Clone or download this project to your web server's document root
+3. Access the website through your web browser
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Note
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+This is a demonstration project only. No actual torrents are hosted or distributed through this website.
 
-Follow these steps:
+## Database Integration
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+For a real-world implementation, you would need to:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. Create a database (MySQL/MariaDB recommended)
+2. Set up tables for torrents, categories, users, comments, etc.
+3. Modify the PHP files to connect to the database and query real data
+4. Implement user authentication if needed
 
-# Step 3: Install the necessary dependencies.
-npm i
+## License
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/d479bd82-4bd0-4d61-89c0-05fb3a8738ec) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+This project is for demonstration purposes only.
