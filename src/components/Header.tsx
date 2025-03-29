@@ -24,7 +24,7 @@ const Header = () => {
       <div className="container mx-auto">
         {/* Top Header with Logo and Search */}
         <div className="flex items-center justify-between py-4">
-          <Link to="/" className="text-2xl font-bold text-primary">1337<span className="text-foreground">Archive</span></Link>
+          <Link to="/" className="text-2xl font-bold text-primary">Mallu<span className="text-foreground">Pirate</span></Link>
           
           <div className="hidden md:flex flex-1 max-w-md mx-4">
             <form onSubmit={handleSearch} className="w-full flex">

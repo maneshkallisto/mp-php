@@ -8,9 +8,9 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div>
-            <h3 className="text-lg font-semibold mb-3">1337Archive</h3>
+            <h3 className="text-lg font-semibold mb-3">Mallu Pirate</h3>
             <p className="text-muted-foreground">
-              1337Archive is a torrent site that offers verified torrents for movies, TV shows, games, music, apps, and more.
+              Mallu Pirate is a torrent site that offers verified torrents for movies, TV shows, games, music, apps, and more.
             </p>
           </div>
           
@@ -52,7 +52,7 @@ const Footer = () => {
             Created for demonstration purposes only.
           </p>
           <p className="mt-2">
-            © 2023 1337Archive. All rights reserved.
+            © 2023 Mallu Pirate. All rights reserved.
           </p>
         </div>
       </div>

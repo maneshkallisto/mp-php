@@ -13,9 +13,9 @@ const Index = () => {
       
       <main className="flex-grow container mx-auto px-4 py-6">
         <div className="bg-card rounded-lg border border-border p-6 mb-8">
-          <h1 className="text-2xl font-bold mb-2">Welcome to 1337Archive</h1>
+          <h1 className="text-2xl font-bold mb-2">Welcome to Mallu Pirate</h1>
           <p className="text-muted-foreground">
-            1337Archive is a torrent search website providing access to verified torrents. 
+            Mallu Pirate is a torrent search website providing access to verified torrents. 
             Browse our extensive collection of movies, TV shows, games, music, applications, and more.
             Please remember to use a VPN for safe and anonymous browsing.
           </p>
