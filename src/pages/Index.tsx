@@ -3,7 +3,6 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CategoryCards from '@/components/CategoryCards';
-import TrendingSection from '@/components/TrendingSection';
 import PopularTorrents from '@/components/PopularTorrents';
 import { Separator } from '@/components/ui/separator';
 
@@ -23,10 +22,6 @@ const Index = () => {
         </div>
         
         <CategoryCards />
-        
-        <Separator className="my-8" />
-        
-        <TrendingSection />
         
         <Separator className="my-8" />
         
