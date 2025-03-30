@@ -21,7 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // For demo purposes, we'll use a hardcoded check
         if ($username === 'admin' && $password === 'password') {
             // Set a session variable to indicate the user is logged in
-            session_start();
+            if(!isset($_SESSION)) {
+                session_start();
+            }
             $_SESSION['user_logged_in'] = true;
             $_SESSION['username'] = $username;
             
@@ -62,7 +64,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         // In a real application, you would save this data to a database
         // For demo purposes, we'll just redirect with a success message
-        session_start();
+        if(!isset($_SESSION)) {
+            session_start();
+        }
         $_SESSION['user_logged_in'] = true;
         $_SESSION['username'] = $username;
         
@@ -94,8 +98,14 @@ switch ($page) {
         break;
     case 'logout':
         // Handle logout
-        session_start();
+        if(!isset($_SESSION)) {
+            session_start();
+        }
         session_destroy();
+        // Clear the remember me cookie if it exists
+        if(isset($_COOKIE['remember_user'])) {
+            setcookie('remember_user', '', time() - 3600, '/');
+        }
         header('Location: index.php?success=You have been logged out');
         exit;
         break;

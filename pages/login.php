@@ -17,7 +17,7 @@
         }
         ?>
         
-        <form class="auth-form" action="index.php?page=login" method="post">
+        <form class="auth-form" action="index.php?page=login" method="POST">
             <div class="form-group">
                 <label for="username">Username or Email</label>
                 <input type="text" id="username" name="username" required>
