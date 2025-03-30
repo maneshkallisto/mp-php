@@ -275,6 +275,13 @@ body {
   color: var(--muted-foreground);
 }
 
+/* Welcome Message Styles */
+.welcome-text {
+  color: var(--primary);
+  margin-right: 1rem;
+  font-weight: 500;
+}
+
 /* Authentication Pages Styles */
 .auth-container {
   display: flex;
@@ -459,8 +466,6 @@ body {
 .auth-footer a:hover {
   text-decoration: underline;
 }
-
-/* End Authentication Styles */
 
 /* Auth Nav in Header */
 .auth-nav {

@@ -19,6 +19,7 @@
     
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <?php session_start(); ?>
 </head>
 <body>
     <header class="header">
@@ -37,8 +38,13 @@
                 <a href="index.php?page=trending" class="nav-link <?php echo $page === 'trending' ? 'active' : ''; ?>">Trending</a>
                 <a href="index.php?page=top" class="nav-link <?php echo $page === 'top' ? 'active' : ''; ?>">Top 100</a>
                 <div class="auth-nav">
-                    <a href="index.php?page=login" class="nav-link <?php echo $page === 'login' ? 'active' : ''; ?>">Login</a>
-                    <a href="index.php?page=register" class="nav-link auth-register <?php echo $page === 'register' ? 'active' : ''; ?>">Register</a>
+                    <?php if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in']): ?>
+                        <span class="welcome-text">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
+                        <a href="index.php?page=logout" class="nav-link">Logout</a>
+                    <?php else: ?>
+                        <a href="index.php?page=login" class="nav-link <?php echo $page === 'login' ? 'active' : ''; ?>">Login</a>
+                        <a href="index.php?page=register" class="nav-link auth-register <?php echo $page === 'register' ? 'active' : ''; ?>">Register</a>
+                    <?php endif; ?>
                 </div>
             </nav>
         </div>
@@ -46,3 +52,10 @@
     
     <main class="main">
         <div class="container">
+            <?php
+            // Display success message if set
+            if (isset($_GET['success'])) {
+                $success = htmlspecialchars($_GET['success']);
+                echo '<div class="auth-success">' . $success . '</div>';
+            }
+            ?>
