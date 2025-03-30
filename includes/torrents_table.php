@@ -135,6 +135,7 @@ if (isset($_GET['category']) && $_GET['category']) {
             <th>Leechers</th>
             <th>Uploader</th>
             <th>Date</th>
+            <th>Download</th>
         </tr>
     </thead>
     <tbody>
@@ -156,6 +157,11 @@ if (isset($_GET['category']) && $_GET['category']) {
             <td class="leechers"><?php echo number_format($torrent['leechers']); ?></td>
             <td><?php echo htmlspecialchars($torrent['uploader']); ?></td>
             <td><?php echo htmlspecialchars($torrent['uploadDate']); ?></td>
+            <td>
+                <a href="index.php?page=download&id=<?php echo $torrent['id']; ?>" class="download-link" title="Download Torrent">
+                    <i class="fas fa-download"></i>
+                </a>
+            </td>
         </tr>
         <?php endforeach; ?>
     </tbody>

@@ -90,6 +90,12 @@ switch ($page) {
     case 'search':
         include 'pages/search.php';
         break;
+    case 'torrent':
+        include 'pages/torrent.php';
+        break;
+    case 'download':
+        include 'pages/download.php';
+        break;
     case 'login':
         include 'pages/login.php';
         break;

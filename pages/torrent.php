@@ -22,6 +22,7 @@ $torrents = [
         'cast' => 'Timothée Chalamet, Zendaya, Rebecca Ferguson',
         'language' => 'English',
         'magnet' => 'magnet:?xt=urn:btih:1a2b3c4d5e6f7g8h9i0j&dn=Dune.Part.Two.2024.2160p.4K.BluRay.x265',
+        'fileName' => 'Dune.Part.Two.2024.2160p.4K.BluRay.x265.torrent',
     ],
     2 => [
         'id' => '2',
@@ -40,6 +41,7 @@ $torrents = [
         'cast' => 'Ella Purnell, Walton Goggins, Kyle MacLachlan',
         'language' => 'English',
         'magnet' => 'magnet:?xt=urn:btih:a1b2c3d4e5f6g7h8i9j0&dn=Fallout.Complete.S01.1080p.WEB-DL.5.1.x264',
+        'fileName' => 'Fallout.Complete.S01.1080p.WEB-DL.5.1.x264.torrent',
     ],
 ];
 
@@ -132,8 +134,8 @@ if (!$torrent) {
                     <i class="fas fa-magnet"></i> Magnet Download
                 </a>
                 
-                <a href="#" style="display: block; background: var(--secondary); color: white; padding: 1rem; border-radius: var(--radius); text-decoration: none; font-weight: 500;">
-                    <i class="fas fa-download"></i> Torrent File
+                <a href="index.php?page=download&id=<?php echo $torrentId; ?>" style="display: block; background: var(--secondary); color: white; padding: 1rem; border-radius: var(--radius); text-decoration: none; font-weight: 500;">
+                    <i class="fas fa-download"></i> Download Torrent File
                 </a>
             </div>
             
