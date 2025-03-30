@@ -43,6 +43,23 @@ $torrents = [
         'magnet' => 'magnet:?xt=urn:btih:a1b2c3d4e5f6g7h8i9j0&dn=Fallout.Complete.S01.1080p.WEB-DL.5.1.x264',
         'fileName' => 'Fallout.Complete.S01.1080p.WEB-DL.5.1.x264.torrent',
     ],
+    3 => [
+        'id' => '3',
+        'title' => 'The Monkey (2025) [1080p] [WEBRip] [x264] [AAC] [LAMA]',
+        'category' => 'Movies',
+        'size' => '2.1 GB',
+        'uploadDate' => '17 May 2024',
+        'uploader' => 'LAMA',
+        'isVerified' => true,
+        'description' => 'A horror film about a cursed monkey figurine that brings terror to those who possess it.',
+        'imdbRating' => '7.2/10',
+        'genre' => 'Horror, Thriller',
+        'director' => 'Mike Flanagan',
+        'cast' => 'Rebecca Hall, Jake Gyllenhaal, Tilda Swinton',
+        'language' => 'English',
+        'magnet' => 'magnet:?xt=urn:btih:c1d2e3f4g5h6i7j8k9l0m1n2o3p4q5r6&dn=The-Monkey-2025-1080p-WEBRip-x264-AAC-LAMA',
+        'fileName' => 'The-Monkey-2025-1080p-WEBRip-x264-AAC-LAMA.torrent',
+    ],
 ];
 
 // Get torrent details
