@@ -1,4 +1,3 @@
-
 :root {
   --background: hsl(220, 10%, 10%);
   --foreground: hsl(0, 0%, 95%);
@@ -276,7 +275,212 @@ body {
   color: var(--muted-foreground);
 }
 
-/* Responsive Styles */
+/* Authentication Pages Styles */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  min-height: 80vh;
+}
+
+.auth-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+}
+
+.auth-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--primary);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
+.remember-group, .terms-group {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terms-group {
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  cursor: pointer;
+  font-size: 0.875rem;
+  user-select: none;
+}
+
+.checkbox-container input {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: relative;
+  height: 18px;
+  width: 18px;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  background-color: var(--muted);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.forgot-link, .terms-link {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.forgot-link:hover, .terms-link:hover {
+  text-decoration: underline;
+}
+
+.auth-button {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.auth-button:hover {
+  background-color: hsl(11, 90%, 50%);
+}
+
+.auth-error {
+  background-color: rgba(220, 38, 38, 0.1);
+  color: #ef4444;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.auth-success {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.auth-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.auth-footer a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* End Authentication Styles */
+
+/* Auth Nav in Header */
+.auth-nav {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  gap: 0.5rem;
+}
+
+.auth-register {
+  background-color: var(--primary);
+  color: var(--primary-foreground) !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: var(--radius);
+}
+
+.auth-register:hover {
+  background-color: hsl(11, 90%, 50%);
+}
+
 @media (max-width: 768px) {
   .header-container {
     flex-wrap: wrap;
@@ -295,6 +499,14 @@ body {
   .torrents-table {
     display: block;
     overflow-x: auto;
+  }
+  
+  .auth-nav {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    width: 100%;
+    justify-content: center;
+    order: 4;
   }
 }
 

@@ -36,6 +36,10 @@
                 <a href="index.php?page=browse" class="nav-link <?php echo $page === 'browse' ? 'active' : ''; ?>">Browse</a>
                 <a href="index.php?page=trending" class="nav-link <?php echo $page === 'trending' ? 'active' : ''; ?>">Trending</a>
                 <a href="index.php?page=top" class="nav-link <?php echo $page === 'top' ? 'active' : ''; ?>">Top 100</a>
+                <div class="auth-nav">
+                    <a href="index.php?page=login" class="nav-link <?php echo $page === 'login' ? 'active' : ''; ?>">Login</a>
+                    <a href="index.php?page=register" class="nav-link auth-register <?php echo $page === 'register' ? 'active' : ''; ?>">Register</a>
+                </div>
             </nav>
         </div>
     </header>

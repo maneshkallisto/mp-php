@@ -18,6 +18,12 @@ switch ($page) {
     case 'search':
         include 'pages/search.php';
         break;
+    case 'login':
+        include 'pages/login.php';
+        break;
+    case 'register':
+        include 'pages/register.php';
+        break;
     default:
         include 'pages/404.php';
         break;
