@@ -13,6 +13,7 @@ const Header = () => {
     e.preventDefault();
     console.log("Searching for:", searchQuery);
     // In a real app, redirect to search results
+    window.location.href = `index.php?page=search&q=${encodeURIComponent(searchQuery)}`;
   };
 
   const toggleMenu = () => {
@@ -24,7 +25,7 @@ const Header = () => {
       <div className="container mx-auto">
         {/* Top Header with Logo and Search */}
         <div className="flex items-center justify-between py-4">
-          <Link to="/" className="text-2xl font-bold text-primary">Mallu<span className="text-foreground">Pirate</span></Link>
+          <a href="index.php" className="text-2xl font-bold text-primary">Mallu<span className="text-foreground">Pirate</span></a>
           
           <div className="hidden md:flex flex-1 max-w-md mx-4">
             <form onSubmit={handleSearch} className="w-full flex">
@@ -49,10 +50,10 @@ const Header = () => {
           
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="secondary" asChild>
-              <Link to="/login">Login</Link>
+              <a href="index.php?page=login">Login</a>
             </Button>
             <Button asChild>
-              <Link to="/register">Register</Link>
+              <a href="index.php?page=register">Register</a>
             </Button>
           </div>
         </div>
@@ -77,34 +78,34 @@ const Header = () => {
         <nav className={`${isMenuOpen ? 'block' : 'hidden'} md:block border-t border-border`}>
           <ul className="flex flex-col md:flex-row overflow-x-auto whitespace-nowrap py-1">
             <li>
-              <Link to="/" className="nav-link active">Home</Link>
+              <a href="index.php" className="nav-link active">Home</a>
             </li>
             <li>
-              <Link to="/browse/movies" className="nav-link">Movies</Link>
+              <a href="index.php?page=browse&category=movies" className="nav-link">Movies</a>
             </li>
             <li>
-              <Link to="/browse/tv" className="nav-link">TV</Link>
+              <a href="index.php?page=browse&category=tv" className="nav-link">TV</a>
             </li>
             <li>
-              <Link to="/browse/games" className="nav-link">Games</Link>
+              <a href="index.php?page=browse&category=games" className="nav-link">Games</a>
             </li>
             <li>
-              <Link to="/browse/music" className="nav-link">Music</Link>
+              <a href="index.php?page=browse&category=music" className="nav-link">Music</a>
             </li>
             <li>
-              <Link to="/browse/apps" className="nav-link">Applications</Link>
+              <a href="index.php?page=browse&category=apps" className="nav-link">Applications</a>
             </li>
             <li>
-              <Link to="/browse/documentaries" className="nav-link">Documentaries</Link>
+              <a href="index.php?page=browse&category=documentaries" className="nav-link">Documentaries</a>
             </li>
             <li>
-              <Link to="/browse/anime" className="nav-link">Anime</Link>
+              <a href="index.php?page=browse&category=anime" className="nav-link">Anime</a>
             </li>
             <li>
-              <Link to="/browse/other" className="nav-link">Other</Link>
+              <a href="index.php?page=browse&category=other" className="nav-link">Other</a>
             </li>
             <li>
-              <Link to="/top" className="nav-link">Top 100</Link>
+              <a href="index.php?page=top" className="nav-link">Top 100</a>
             </li>
           </ul>
         </nav>
