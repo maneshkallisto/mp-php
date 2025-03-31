@@ -25,7 +25,7 @@ const Header = () => {
       <div className="container mx-auto">
         {/* Top Header with Logo and Search */}
         <div className="flex items-center justify-between py-4">
-          <a href="index.php" className="text-2xl font-bold text-primary">Mallu<span className="text-foreground">Pirate</span></a>
+          <Link to="/" className="text-2xl font-bold text-primary">Mallu<span className="text-foreground">Pirate</span></Link>
           
           <div className="hidden md:flex flex-1 max-w-md mx-4">
             <form onSubmit={handleSearch} className="w-full flex">
@@ -50,10 +50,10 @@ const Header = () => {
           
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="secondary" asChild>
-              <a href="index.php?page=login">Login</a>
+              <Link to="/login">Login</Link>
             </Button>
             <Button asChild>
-              <a href="index.php?page=register">Register</a>
+              <Link to="/register">Register</Link>
             </Button>
           </div>
         </div>
