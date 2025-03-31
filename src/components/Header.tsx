@@ -48,8 +48,8 @@ const Header = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="secondary">Login</Button>
-            <Button>Register</Button>
+            <Button variant="secondary" onClick={() => window.location.href = 'index.php?page=login'}>Login</Button>
+            <Button onClick={() => window.location.href = 'index.php?page=register'}>Register</Button>
           </div>
         </div>
         
@@ -107,6 +107,6 @@ const Header = () => {
       </div>
     </header>
   );
-};
+}
 
 export default Header;

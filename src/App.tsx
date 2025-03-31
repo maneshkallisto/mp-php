@@ -8,6 +8,8 @@ import React from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import TorrentDetail from "./components/TorrentDetail";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   const queryClient = new QueryClient();
@@ -21,6 +23,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/torrent/:id" element={<TorrentDetail />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
