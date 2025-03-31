@@ -48,8 +48,12 @@ const Header = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="secondary" onClick={() => window.location.href = 'index.php?page=login'}>Login</Button>
-            <Button onClick={() => window.location.href = 'index.php?page=register'}>Register</Button>
+            <Button variant="secondary" asChild>
+              <Link to="/login">Login</Link>
+            </Button>
+            <Button asChild>
+              <Link to="/register">Register</Link>
+            </Button>
           </div>
         </div>
         
