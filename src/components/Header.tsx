@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 import { Menu, X, Search } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
