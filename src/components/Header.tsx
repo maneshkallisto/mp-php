@@ -12,7 +12,7 @@ const Header = () => {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Searching for:", searchQuery);
-    // Redirect to PHP search page
+    // Redirect to PHP search page with full page reload
     window.location.href = `index.php?page=search&q=${encodeURIComponent(searchQuery)}`;
   };
 
@@ -25,7 +25,7 @@ const Header = () => {
       <div className="container mx-auto">
         {/* Top Header with Logo and Search */}
         <div className="flex items-center justify-between py-4">
-          <Link to="/" className="text-2xl font-bold text-primary">Mallu<span className="text-foreground">Pirate</span></Link>
+          <a href="index.php" className="text-2xl font-bold text-primary">Mallu<span className="text-foreground">Pirate</span></a>
           
           <div className="hidden md:flex flex-1 max-w-md mx-4">
             <form onSubmit={handleSearch} className="w-full flex">
