@@ -8,12 +8,8 @@ const TorrentDetail = () => {
   const { id } = useParams();
   
   useEffect(() => {
-    // Force immediate navigation to PHP page
-    window.location.href = `index.php?page=torrent&id=${id}`;
-    // As a fallback, if replace doesn't work properly
-    setTimeout(() => {
-      window.location.href = `index.php?page=torrent&id=${id}`;
-    }, 100);
+    // Direct approach - change the window location
+    window.location.assign(`index.php?page=torrent&id=${id}`);
   }, [id]);
 
   return (
