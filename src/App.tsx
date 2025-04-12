@@ -3,29 +3,31 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import TorrentDetail from "./components/TorrentDetail";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 
-// Create a simple redirect display component that doesn't cause security errors
-const Redirect = ({ to }: { to: string }) => {
+// Create a direct link component to PHP pages
+const PHPRedirect = ({ to }: { to: string }) => {
+  const handleRedirect = () => {
+    window.open(to, "_blank", "noopener,noreferrer");
+  };
+
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center">
-      <div className="text-center">
-        <p className="text-lg">Please click the link below to continue:</p>
-        <div className="mt-4">
-          <Link 
-            to={to} 
-            className="bg-primary text-white px-4 py-2 rounded hover:bg-primary/90 transition-colors"
-            onClick={(e) => {
-              e.preventDefault();
-              // Open in new tab to avoid iframe security restrictions
-              window.open(to, "_blank");
-            }}
-          >
-            Continue to {to}
-          </Link>
-        </div>
+    <div className="min-h-screen flex flex-col justify-center items-center bg-background">
+      <div className="text-center max-w-md p-6 bg-card rounded-lg shadow-lg border border-border">
+        <h1 className="text-2xl font-bold mb-4">Mallu Pirate</h1>
+        <p className="text-lg mb-6">Click the button below to continue to the site:</p>
+        <Button 
+          onClick={handleRedirect} 
+          className="flex items-center gap-2"
+          size="lg"
+        >
+          Continue to Site
+          <ExternalLink size={16} />
+        </Button>
       </div>
     </div>
   );
@@ -41,11 +43,11 @@ function App() {
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Redirect to="index.php" />} />
+            <Route path="/" element={<PHPRedirect to="index.php" />} />
             <Route path="/torrent/:id" element={<TorrentDetail />} />
-            <Route path="/login" element={<Redirect to="index.php?page=login" />} />
-            <Route path="/register" element={<Redirect to="index.php?page=register" />} />
-            <Route path="*" element={<Redirect to="index.php" />} />
+            <Route path="/login" element={<PHPRedirect to="index.php?page=login" />} />
+            <Route path="/register" element={<PHPRedirect to="index.php?page=register" />} />
+            <Route path="*" element={<PHPRedirect to="index.php" />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
