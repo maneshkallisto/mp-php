@@ -8,8 +8,8 @@ const TorrentDetail = () => {
   const { id } = useParams();
   
   useEffect(() => {
-    // Direct approach - change the window location
-    window.location.assign(`index.php?page=torrent&id=${id}`);
+    // Use top-level window.location for more reliable page navigation
+    window.top.location.href = `index.php?page=torrent&id=${id}`;
   }, [id]);
 
   return (
