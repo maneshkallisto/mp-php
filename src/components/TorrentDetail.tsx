@@ -8,8 +8,8 @@ const TorrentDetail = () => {
   const { id } = useParams();
   
   useEffect(() => {
-    // Redirect to PHP torrent page with full page reload
-    window.location.href = `index.php?page=torrent&id=${id}`;
+    // Redirect to PHP torrent page with full page reload - immediately
+    window.location.replace(`index.php?page=torrent&id=${id}`);
   }, [id]);
 
   return (

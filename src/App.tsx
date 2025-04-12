@@ -3,19 +3,16 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import React, { useEffect } from "react";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
 import TorrentDetail from "./components/TorrentDetail";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
 
-// Helper component to redirect to PHP page
+// We're simplifying this component to immediately redirect
 const RedirectToPhp = ({ phpPage }: { phpPage: string }) => {
-  useEffect(() => {
-    window.location.href = phpPage;
-  }, [phpPage]);
+  React.useEffect(() => {
+    // Use replace instead of href for immediate redirection without browser history entry
+    window.location.replace(phpPage);
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center">
@@ -37,11 +34,12 @@ function App() {
         <Sonner />
         <BrowserRouter>
           <Routes>
+            {/* Direct immediately to PHP pages without React rendering */}
             <Route path="/" element={<RedirectToPhp phpPage="index.php" />} />
             <Route path="/torrent/:id" element={<TorrentDetail />} />
             <Route path="/login" element={<RedirectToPhp phpPage="index.php?page=login" />} />
             <Route path="/register" element={<RedirectToPhp phpPage="index.php?page=register" />} />
-            {/* Handle any other path by redirecting to PHP index */}
+            {/* Catch all other routes */}
             <Route path="*" element={<RedirectToPhp phpPage="index.php" />} />
           </Routes>
         </BrowserRouter>
