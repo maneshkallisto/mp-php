@@ -7,12 +7,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import TorrentDetail from "./components/TorrentDetail";
 
-// We're simplifying this component to immediately redirect
-const RedirectToPhp = ({ phpPage }: { phpPage: string }) => {
+// Direct redirect component with no delays
+const DirectRedirect = ({ phpPage }: { phpPage: string }) => {
   React.useEffect(() => {
-    // Use replace instead of href for immediate redirection without browser history entry
-    window.location.replace(phpPage);
-  }, []);
+    // Try both methods for maximum compatibility
+    window.location.href = phpPage;
+    
+    // Fallback with timeout
+    setTimeout(() => {
+      document.location.href = phpPage;
+    }, 100);
+  }, [phpPage]);
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center">
@@ -27,6 +32,16 @@ const RedirectToPhp = ({ phpPage }: { phpPage: string }) => {
 function App() {
   const queryClient = new QueryClient();
   
+  // Force redirect to PHP on initial load
+  React.useEffect(() => {
+    const currentPath = window.location.pathname;
+    
+    // If we're on the root path, immediately redirect to PHP index
+    if (currentPath === "/") {
+      window.location.href = "index.php";
+    }
+  }, []);
+  
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -34,13 +49,13 @@ function App() {
         <Sonner />
         <BrowserRouter>
           <Routes>
-            {/* Direct immediately to PHP pages without React rendering */}
-            <Route path="/" element={<RedirectToPhp phpPage="index.php" />} />
+            {/* Direct immediately to PHP pages */}
+            <Route path="/" element={<DirectRedirect phpPage="index.php" />} />
             <Route path="/torrent/:id" element={<TorrentDetail />} />
-            <Route path="/login" element={<RedirectToPhp phpPage="index.php?page=login" />} />
-            <Route path="/register" element={<RedirectToPhp phpPage="index.php?page=register" />} />
+            <Route path="/login" element={<DirectRedirect phpPage="index.php?page=login" />} />
+            <Route path="/register" element={<DirectRedirect phpPage="index.php?page=register" />} />
             {/* Catch all other routes */}
-            <Route path="*" element={<RedirectToPhp phpPage="index.php" />} />
+            <Route path="*" element={<DirectRedirect phpPage="index.php" />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
